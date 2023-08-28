@@ -57,3 +57,24 @@ void vListInsert(List_t *const pxList, ListItem_t *const pxNewItem)
     (pxList->uxNumberOfItems) ++;
 
 }
+
+UBaseType_t uxListRemove(ListItem_t *const pxItemToRemove)
+{
+    List_t * const pxList = pxItemToRemove->pvContainer;
+
+    //将指定节点删除
+    pxItemToRemove->pxPrevious->pxNext = pxItemToRemove->pxNext;
+    pxItemToRemove->pxNext->pxPrevious = pxItemToRemove->pxPrevious;
+
+    if(pxList->pxIndex == pxItemToRemove)
+    {
+        pxList->pxIndex = pxItemToRemove->pxPrevious;
+    }
+
+    pxItemToRemove->pvContainer = NULL;
+
+    (pxList->uxNumberOfItems)--;
+
+
+    return pxList->uxNumberOfItems;
+}

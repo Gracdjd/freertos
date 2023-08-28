@@ -51,4 +51,9 @@ void vListInsertEnd(List_t * const pxList, ListItem_t * const pxNewItem);
 /// @param pxItem 
 void vListInsert(List_t * const pxList, ListItem_t * const pxNewItem);
 
+/// @brief 删除指定item
+/// @param pxItemToRemove 
+/// @return 返回删除后的item数量
+UBaseType_t uxListRemove(ListItem_t * const pxItemToRemove);
+
 #endif
