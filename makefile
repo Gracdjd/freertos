@@ -4,8 +4,12 @@ CFLAGS = -Wall -O2
 LIST_DIR = list
 LIST_SRC = $(LIST_DIR)/list.c
 
+TASK_DIR = task
+TASK_SRC = $(TASK_DIR)/task.c
+
+PORT_SRC = port.c
 TARGET = main
-SRCS = main.c $(LIST_SRC) 
+SRCS = main.c $(LIST_SRC) $(TASK_SRC) $(PORT_SRC)
 OBJS = $(SRCS:.c=.o)
 all: $(TARGET)
 

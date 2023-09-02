@@ -1,10 +1,10 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include "../portmacro.h"
+#include "../portable.h"
 
 /// @brief node
-struct xLIST_ITEM
+typedef struct xLIST_ITEM
 {
     /* data */
     TickType_t xItemValue;
@@ -12,8 +12,8 @@ struct xLIST_ITEM
     struct xLIST_ITEM * pxPrevious;
     void * pvOwner; //指向内核中的拥有者，通常是TCB对象
     void * pvContainer; //指向节点所在链表
-};
-typedef struct xLIST_ITEM ListItem_t;
+}ListItem_t;
+// typedef struct xLIST_ITEM ListItem_t;
 
 
 
